@@ -1,0 +1,97 @@
+# Ignore build directories
+/build/
+/bin/
+/lib/
+/out/
+
+# Ignore CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Ignore Visual Studio generated files
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+# Ignore compiler-generated files
+*.obj
+*.o
+*.exe
+*.out
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+*.app
+*.exp
+*.pdb
+*.idb
+
+# Ignore generated binaries and logs
+*.log
+*.db
+*.elf
+
+# Ignore editor/IDE-specific files
+.idea/
+.vscode/
+*.code-workspace
+*.user
+*.suo
+*.ncb
+*.opt
+*.plg
+
+# Ignore backup and temporary files
+*~
+*.swp
+*.bak
+*.tmp
+*.temp
+*.old
+
+# Ignore dependency files
+*.d
+*.dep
+
+# Ignore generated documentation
+doc/
+
+# Ignore generated files from testing
+*.gcda
+*.gcno
+*.gcov
+*.profraw
+*.profdata
+
+# Ignore auto-generated files
+*.gen.cpp
+*.moc
+
+# Ignore package management files
+node_modules/
+.DS_Store
+
+# Ignore executable files
+*.run
+
+# Ignore archives
+*.zip
+*.tar.gz
+*.tar.bz2
+*.7z
+*.rar
+*.tar.xz
+
+# Ignore build artifacts
+build-*/
+
+# Ignore Clang-Tidy and other analyzer reports
+*.clang-tidy
+
+# Ignore lock files
+*.lock
