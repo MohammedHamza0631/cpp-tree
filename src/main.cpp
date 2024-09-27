@@ -38,14 +38,11 @@ int main(int argc, char *argv[])
     bool show_files = false;
     fs::path target_path = fs::current_path();
 
-    // Check if arguments are provided
     if (argc > 1)
     {
-        // Check if the first argument is the /F flag
         if (std::string(argv[1]) == "/F")
         {
             show_files = true;
-            // Default to current directory if /F is the only argument
             if (argc == 2)
             {
                 target_path = fs::current_path();
@@ -53,9 +50,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            // Otherwise, treat the first argument as the path
             target_path = fs::path(argv[1]);
-            // Check if the second argument is /F
             if (argc > 2 && std::string(argv[2]) == "/F")
             {
                 show_files = true;
@@ -63,10 +58,20 @@ int main(int argc, char *argv[])
         }
     }
 
-    // Print the root directory name
+    if (!fs::exists(target_path))
+    {
+        std::cerr << "Error: The specified path does not exist: " << target_path << std::endl;
+        return 1;
+    }
+
+    if (!fs::is_directory(target_path))
+    {
+        std::cerr << "Error: The specified path is not a directory: " << target_path << std::endl;
+        return 1;
+    }
+
     std::cout << target_path.string() << std::endl;
 
-    // Start printing the tree from the target path
     print_tree(target_path, "", true, show_files);
 
     return 0;
